@@ -66,13 +66,13 @@ def collect_structures_and_variables(original_graph):
                 pm[k] = v
 
     # Process CppAlias
-    alias_edges = original_graph.find_edges(label="CppAlias")
-    for e in alias_edges:
-        c_id = e.source
-        d_id = e.target
-        if c_id in all_decl_ids and d_id in all_decl_ids:
-            # "prioritize c" => union(d_id, c_id)
-            union(c_id, d_id)
+    # alias_edges = original_graph.find_edges(label="CppAlias")
+    # for e in alias_edges:
+    #     c_id = e.source
+    #     d_id = e.target
+    #     if c_id in all_decl_ids and d_id in all_decl_ids:
+    #         # "prioritize c" => union(d_id, c_id)
+    #         union(c_id, d_id)
 
     # 1) Identify representative sets => final structure or variable
     comp_members = defaultdict(list)
